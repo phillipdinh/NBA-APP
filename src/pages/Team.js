@@ -17,7 +17,7 @@ import useScheduleSearch from "../hooks/useScheduleSearch"
 import Spinner from "../components/Spinner"
 import PlayerListItem from "../components/PlayerListItem"
 import Notice from "../components/Notice"
-import { Calendar, momentLocalizer, Views } from "react-big-calendar"
+import { Calendar, momentLocalizer } from "react-big-calendar"
 import moment from "moment"
 import React from "react"
 import "react-big-calendar/lib/css/react-big-calendar.css"
@@ -33,7 +33,7 @@ function Team(props) {
 	const teamsError = useSelector(getTeamsError)
 	const loadingTeamPlayers = useSelector(getLoadingTeamPlayers)
 	useTeamPlayersSearch(teamPlayers[id] != null, id)
-	useTeamsSearch(teams.length != 0)
+	useTeamsSearch(teams.length !== 0)
 	const schedule = useScheduleSearch()
 	const scheduleError = useSelector(getTeamSchedulesError)
 	const scheduleLoading = useSelector(getLoadingTeamSchedules)
@@ -46,7 +46,7 @@ function Team(props) {
 			) : (
 				<TeamContainer>
 					<TeamName>
-						{teamsError != "" ? (
+						{teamsError !== "" ? (
 							<Notice message={teamsError} error={true} />
 						) : (
 							team.name || ""
@@ -74,7 +74,7 @@ function Team(props) {
 							)}
 						</PlayersContainer>
 						<ScheduleContainer>
-							{scheduleError != "" ? (
+							{scheduleError !== "" ? (
 								<Notice message={scheduleError} error={true} />
 							) : (
 								<div>
@@ -98,7 +98,7 @@ function Team(props) {
 	function findTeam() {
 		let foundTeam = null
 		teams.forEach((team) => {
-			if (team.id == id) {
+			if (team.id === id) {
 				foundTeam = team
 			}
 		})
