@@ -1,5 +1,4 @@
 import styled from "@emotion/styled/macro"
-import { NavLink } from "react-router-dom"
 
 // This function was obtained from https://stackoverflow.com/questions/8888491/how-do-you-display-javascript-datetime-in-12-hour-am-pm-format
 function formatAMPM(date24Hr) {
@@ -18,84 +17,90 @@ function GameListItem2(props) {
 	const startTime = new Date(props.game.date.start)
 	const startTimeString = formatAMPM(startTime)
 	//
-
 	return (
 		<GameListItem2Container>
-			<PlayerInfo>
-				<PlayerName>{props.game.teams.home.name} (Home) </PlayerName>
-				<IconWrapper>
-					{" "}
-					<TeamLogoImage src={props.game.teams.home.logo} />{" "}
-				</IconWrapper>
+			<TeamInfo>
+				<LeftTeam>
+					<TeamName>{props.game.teams.home.name}</TeamName>
+					<IconWrapper>
+						<TeamLogoImage src={props.game.teams.home.logo} />
+					</IconWrapper>
+				</LeftTeam>
 
-				<PlayerName> &nbsp;&nbsp;&nbsp; VS </PlayerName>
+				<VS>VS</VS>
 
-				<IconWrapper>
-					{" "}
-					<TeamLogoImage src={props.game.teams.visitors.logo} />{" "}
-				</IconWrapper>
-				<PlayerName>
-					{" "}
-					&nbsp;&nbsp;&nbsp; {props.game.teams.visitors.name} (Away){" "}
-				</PlayerName>
-			</PlayerInfo>
+				<RightTeam>
+					<IconWrapper>
+						<TeamLogoImage src={props.game.teams.visitors.logo} />
+					</IconWrapper>
+					<TeamName>{props.game.teams.visitors.name}</TeamName>
+				</RightTeam>
+			</TeamInfo>
 
-			<PlayerPosition>{startTimeString}</PlayerPosition>
+			<TeamPosition>{startTimeString}</TeamPosition>
 		</GameListItem2Container>
 	)
 }
 
-/*
-    Name
-    Number
-    Position
- */
-//    text-align: center; /* Add this line to center the contents */
-
-const GameListItem2Container = styled(NavLink)`
+const GameListItem2Container = styled.div`
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	background-color: #dcdcdc;
 	border-radius: 40px;
-	padding: 18px;
+	padding: 18px 0 8px 0;
 	width: 90%;
-	justify-content: space-between;
 	margin: 2px;
-
-	align-items: center; /* Add this line to center the contents vertically */
-	text-align: center; /* Add this line to center the contents horizontally */
-
-	&:nth-child(odd) {
-		background-color: #dcdcdc;
-	}
+	align-items: center;
 `
 
-const PlayerInfo = styled.div`
+const TeamInfo = styled.div`
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	align-items: center;
+	width: 100%;
+`
+
+const LeftTeam = styled.div`
 	display: flex;
-	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end; /* Align left team content to the end */
 `
 
-const PlayerName = styled.div`
+const RightTeam = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: flex-start; /* Align right team content to the start */
+`
+
+const VS = styled.div`
+	font-size: 24px;
+	font-weight: 500;
+	color: black;
+	text-align: center; /* Center the "VS" text */
+`
+
+const TeamName = styled.div`
 	font-weight: 700;
-	font-size: 20px;
+	font-size: 32px;
 	margin-right: 20px;
 	color: black;
 `
 
-const PlayerPosition = styled.div`
+const TeamPosition = styled.div`
 	font-size: 20px;
 	font-weight: 500;
 	color: black;
 `
 
 const IconWrapper = styled.div`
-	width: 70px;
-	height: 50px;
-	margin: 2px;
-	display: block;
-	float: left;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 64px;
+	margin-left: 8px;
+	margin-right: 8px;
 `
-
 const TeamLogoImage = styled.img`
 	max-width: 100%;
 	max-height: 100%;

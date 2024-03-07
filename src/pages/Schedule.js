@@ -92,7 +92,11 @@ function Schedule(props) {
 							<>
 								<h1>NBA schedule for next 7 days</h1>
 								<GameContainer>
-									<h3>{currentDateToDisplay} (Today)</h3>
+									<DateHeader>
+										<h3>Home</h3>
+										<h3>{currentDateToDisplay} (Today)</h3>
+										<h3>Away</h3>
+									</DateHeader>
 									{loading ? (
 										<></>
 									) : (
@@ -108,7 +112,11 @@ function Schedule(props) {
 								</GameContainer>
 
 								<GameContainer>
-									<h3>{tomorrowDateToDisplay} (Tomorrow)</h3>
+									<DateHeader>
+										<h3>Home</h3>
+										<h3>{tomorrowDateToDisplay} (Tomorrow)</h3>
+										<h3>Away</h3>
+									</DateHeader>
 									{loading ? (
 										<></>
 									) : (
@@ -124,7 +132,12 @@ function Schedule(props) {
 								</GameContainer>
 
 								<GameContainer>
-									<h3>{day3DateToDisplay}</h3>
+									<DateHeader>
+										{" "}
+										<h3>Home</h3>
+										<h3>{day3DateToDisplay}</h3>
+										<h3>Away</h3>
+									</DateHeader>
 									{loading ? (
 										<></>
 									) : (
@@ -140,7 +153,11 @@ function Schedule(props) {
 								</GameContainer>
 
 								<GameContainer>
-									<h3>{day4DateToDisplay}</h3>
+									<DateHeader>
+										<h3>Home</h3>
+										<h3>{day4DateToDisplay}</h3>
+										<h3>Away</h3>
+									</DateHeader>
 									{loading ? (
 										<></>
 									) : (
@@ -156,7 +173,12 @@ function Schedule(props) {
 								</GameContainer>
 
 								<GameContainer>
-									<h3>{day5DateToDisplay}</h3>
+									<DateHeader>
+										{" "}
+										<h3>Home</h3>
+										<h3>{day5DateToDisplay}</h3>
+										<h3>Away</h3>
+									</DateHeader>
 									{loading ? (
 										<></>
 									) : (
@@ -172,7 +194,11 @@ function Schedule(props) {
 								</GameContainer>
 
 								<GameContainer>
-									<h3>{day6DateToDisplay}</h3>
+									<DateHeader>
+										<h3>Home</h3>
+										<h3>{day6DateToDisplay}</h3>
+										<h3>Away</h3>
+									</DateHeader>
 									{loading ? (
 										<></>
 									) : (
@@ -188,7 +214,11 @@ function Schedule(props) {
 								</GameContainer>
 
 								<GameContainer>
-									<h3>{day7DateToDisplay}</h3>
+									<DateHeader>
+										<h3>Home</h3>
+										<h3>{day7DateToDisplay}</h3>
+										<h3>Away</h3>
+									</DateHeader>
 									{loading ? (
 										<></>
 									) : (
@@ -241,6 +271,11 @@ const PageContainer = styled.div`
 const EmptyMessage = styled.p`
 	font-size: 22px;
 	font-weight: 600;
+`
+const DateHeader = styled.div`
+	display: flex;
+	justify-content: center;
+	gap: 64px;
 `
 
 export default Schedule
