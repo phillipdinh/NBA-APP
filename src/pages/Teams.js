@@ -23,7 +23,6 @@ function Teams(props) {
 						if (team.nbaFranchise && !team.allStar) {
 							return <TeamIcon key={team.id} team={team} />
 						}
-						return null // Ensure a value is returned for all code paths
 					})}
 				</TeamsContainer>
 			)}

@@ -21,7 +21,7 @@ function Players(props) {
 	const error = useSelector(getSearchResultsError)
 
 	const searchResults = useSelector(getSearchResults)
-	useAllPlayersSearch(searchResults.length != 0, searchInput)
+	useAllPlayersSearch(searchResults.length !== 0, searchInput)
 
 	return (
 		<>
@@ -97,10 +97,5 @@ const PageContainer = styled.div`
 	align-items: center;
 	height: 100vh;
 	gap: 1em;
-`
-
-const PageTitle = styled.h1`
-	font-size: 40px;
-	font-weight: 800;
 `
 export default Players

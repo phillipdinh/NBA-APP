@@ -32,7 +32,7 @@ function Team(props) {
 	const teamPlayersError = useSelector(getTeamPlayersError)
 	const teamsError = useSelector(getTeamsError)
 	const loadingTeamPlayers = useSelector(getLoadingTeamPlayers)
-	useTeamPlayersSearch(teamPlayers[id] != null, id)
+	useTeamPlayersSearch(teamPlayers[id] !== null, id)
 	useTeamsSearch(teams.length !== 0)
 	const schedule = useScheduleSearch()
 	const scheduleError = useSelector(getTeamSchedulesError)
@@ -60,15 +60,13 @@ function Team(props) {
 							) : (
 								<PlayersList>
 									{(teamPlayers[id] || []).map((player) => {
-										if (hasPlayerData(player)) {
+										if (hasPlayerData(player))
 											return (
 												<PlayerListItem
 													key={player.id}
 													player={player}
 												/>
 											)
-										}
-										return null // Ensure a value is returned for all code paths
 									})}
 								</PlayersList>
 							)}
