@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# NBA React Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to our NBA React project! This application is designed to provide an immersive NBA experience, offering a range of features powered by the NBA Rapid API.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Game Information
 
-### `npm start`
+Home page displays ongoing, completed, and scheduled games for the day.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Player Search and Stats
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Players page allows searching through current NBA players then access season statistics and personal information.
 
-### `npm test`
+### Full Schedule View
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Schedule page displays the NBA schedule for the current week including location, date, time, and participating teams.
 
-### `npm run build`
+### Team Profiles
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Teams page displays all NBA teams and details each team's roster and complete game schedule.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   React
+-   React Redux: state management
+-   Emotion: styling
+-   Axios: connecting to Rapid API and fetching data.
+-   Moment: manipulating and displaying date and time.
 
-### `npm run eject`
+## Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/phillipdinh/NBA-APP.git
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Install dependencies:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+npm install
+```
 
-## Learn More
+3. Run the application:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## API Key
 
-### Code Splitting
+To use the NBA Rapid API, you'll need to sign up for an account and obtain an API key. Once you have the API key, create a `.env` file in the root directory of the project and add the following line:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-   REACT_APP_API_URL='api-nba-v1.p.rapidapi.com'
+-   REACT_APP_NBA_API_KEY=your_api_key_here
 
-### Analyzing the Bundle Size
+Replace `your_api_key_here` with your actual API key.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Acknowledgements
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thanks to [Rapid API](https://rapidapi.com/api-sports/api/api-nba) for providing the NBA data and API.
