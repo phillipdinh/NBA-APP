@@ -32,8 +32,8 @@ function Team(props) {
 	const teamPlayersError = useSelector(getTeamPlayersError)
 	const teamsError = useSelector(getTeamsError)
 	const loadingTeamPlayers = useSelector(getLoadingTeamPlayers)
-	useTeamPlayersSearch(teamPlayers[id] !== null, id)
-	useTeamsSearch(teams.length !== 0)
+	useTeamPlayersSearch(teamPlayers[id] != null, id)
+	useTeamsSearch(teams.length != 0)
 	const schedule = useScheduleSearch()
 	const scheduleError = useSelector(getTeamSchedulesError)
 	const scheduleLoading = useSelector(getLoadingTeamSchedules)
@@ -96,7 +96,7 @@ function Team(props) {
 	function findTeam() {
 		let foundTeam = null
 		teams.forEach((team) => {
-			if (team.id === id) {
+			if (team.id == id) {
 				foundTeam = team
 			}
 		})
